@@ -5,12 +5,9 @@
 
 Vec sample_cosine_hemisphere(float u, float v)
 {
-    float z = v;
-    float r = std::sqrt(1 - z * z);
-
-    
-    float x = r * std::cos(2 * M_PI * u);
-    float y = r * std::sin(2 * M_PI * u);
+    float x = std::sqrt(u) * std::cos(2 * M_PI * v);
+    float y = std::sqrt(u) * std::sin(2 * M_PI * v);
+    float z = std::sqrt(1-u);
 
     return {x, y, z};
 }
