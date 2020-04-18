@@ -17,7 +17,7 @@ for i in range(0, n):
     Y[i] = wi[1]
     Z[i] = wi[2]
 
-# sampling point
+# draw sampling point
 fig=plt.figure(figsize=(6,6))
 ax = fig.add_subplot(111, projection='3d')
 # ax.plot_surface(x,y,z, alpha=1) # hemisphere
@@ -26,7 +26,7 @@ ax.set_ylabel("Y")
 ax.set_zlabel("Z")
 ax.scatter(X,Y,Z,marker="o",linestyle='None',c=Z) # sample point
 
-# sphere
+# draw sphere
 u,v=np.mgrid[0:2*np.pi:50j, 0:np.pi:25j]
 x=np.cos(u)*np.sin(v)
 y=np.sin(u)*np.sin(v)
