@@ -5,9 +5,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 sns.set_style("darkgrid")
 from mpl_toolkits.mplot3d import Axes3D
+import mpl_toolkits.mplot3d.art3d as art3d
 
 #param
-g = -0.9
+g = 0.1
 origin = np.array([0,-2.5,0])
 direction = np.array([0,1,0])
 sigma_a = 0
@@ -41,8 +42,10 @@ for path_list in path_list_list:
     now_point = origin
     rnd_color = [np.random.rand(), np.random.rand(), np.random.rand()]
     for v in path_list:
-        ax.quiver(now_point[0], now_point[1], now_point[2], v[0], v[1], v[2], color=rnd_color)
-        now_point = now_point + v
+        next_sc_point = now_point + v
+        line = art3d.Line3D([now_point[0], next_sc_point[0]],[now_point[1], next_sc_point[1]],[now_point[2], next_sc_point[2]], color=rnd_color, linewidth=1.2)
+        ax.add_line(line)
+        now_point = next_sc_point
 
 plt.title("free-path sampling with HG phase function: g = {}".format(g))
 plt.show()
