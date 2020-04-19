@@ -7,10 +7,10 @@ sns.set_style("darkgrid")
 from mpl_toolkits.mplot3d import Axes3D
 
 #scattering parametor
-g = 0.1
+g = 0.8
 
 # phase sampling
-n = 1000
+n = 0
 X = np.zeros(n)
 Y = np.zeros(n)
 Z = np.zeros(n)
